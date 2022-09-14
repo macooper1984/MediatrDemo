@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  MyDb:
+    image: mysql:8.0
+    container_name: MyDb
+    restart: always
+    environment:
+      MYSQL_USER: otb
+      MYSQL_PASSWORD: OtbOtb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: AdminDotNet
+    ports:
+      - "3311:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
