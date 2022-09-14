@@ -1,7 +1,10 @@
 ﻿using Dapper;
 using MediatrDemo.Domain;
 using MediatrDemo.Logic.Commands.Flights;
+using MediatrDemo.Logic.Commands.Hotels;
 using MediatrDemo.Logic.Repositories;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MediatrDemo.Data.Repositories
@@ -19,6 +22,19 @@ namespace MediatrDemo.Data.Repositories
             var result = await ConnectionService.Connection.ExecuteScalarAsync<int>(sql, request, ConnectionService.Transaction);
 
             return result;
+        }
+
+        public async Task<List<CreateFlightLegCommand>> GetByIdAsync(int flightBookingId)
+        {
+            const string sql = @"SELECT * FROM FlightLegs WHERE FlightBookingId = @FlightBookingId";
+
+            var results = await ConnectionService.Connection.QueryAsync<CreateFlightLegCommand>(sql, new
+            {
+                FlightBookingId = flightBookingId
+            },
+            ConnectionService.Transaction);
+
+            return results.ToList();
         }
     }
 }

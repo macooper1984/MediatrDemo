@@ -8,6 +8,7 @@ namespace MediatrDemo.Logic.Commands.Flights
 {
     public class CreateFlightBookingCommand : IRequest<int>
     {
+        public int Id { get; set; }
         public int OrderId { get; set; }
         public string Reference { get; set; }
         public string AirlineName { get; set; }
