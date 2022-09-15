@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MediatrDemo.Domain;
 using MediatrDemo.Domain.Exceptions;
 using MediatrDemo.Logic.Interfaces.Repositories;
 using MediatrDemo.Logic.Usecases.Hotels.Queries;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.Usecases.Orders.Queries
 {
-    public record GetOrderQuery : IRequest<CreateOrderCommand>
+    public record GetOrderQuery : IQuery<CreateOrderCommand>
     {
         public int Id { get; }
 
@@ -17,6 +18,8 @@ namespace MediatrDemo.Logic.Usecases.Orders.Queries
         {
             Id = id;
         }
+
+        public string CacheKey => $"GetOrder:{Id}";
     }
 
     public class GetOrderQueryHandler : IRequestHandler<GetOrderQuery, CreateOrderCommand>

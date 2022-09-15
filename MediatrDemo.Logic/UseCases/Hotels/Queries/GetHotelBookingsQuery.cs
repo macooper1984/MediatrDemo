@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MediatrDemo.Domain;
 using MediatrDemo.Logic.Interfaces.Repositories;
 using MediatrDemo.Logic.UseCases.Hotels.Commands;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.Usecases.Hotels.Queries
 {
-    public class GetHotelBookingsQuery : IRequest<List<CreateHotelBookingCommand>>
+    public class GetHotelBookingsQuery : IQuery<List<CreateHotelBookingCommand>>
     {
         public GetHotelBookingsQuery(int orderId)
         {
@@ -15,6 +16,8 @@ namespace MediatrDemo.Logic.Usecases.Hotels.Queries
         }
 
         public int OrderId { get; }
+
+        public string CacheKey => $"GetHotelBooking:{OrderId}";
     }
 
     public class GetHotelBookingsQueryHandler : IRequestHandler<GetHotelBookingsQuery, List<CreateHotelBookingCommand>>

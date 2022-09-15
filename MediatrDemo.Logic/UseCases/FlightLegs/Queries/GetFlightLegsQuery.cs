@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MediatrDemo.Domain;
 using MediatrDemo.Logic.Interfaces.Repositories;
 using MediatrDemo.Logic.Usecases.FlightLegs.Commands;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.Usecases.FlightLegs.Queries
 {
-    public class GetFlightLegsQuery : IRequest<List<CreateFlightLegCommand>>
+    public class GetFlightLegsQuery : IQuery<List<CreateFlightLegCommand>>
     {
         public GetFlightLegsQuery(int flightBookingId)
         {
@@ -15,6 +16,8 @@ namespace MediatrDemo.Logic.Usecases.FlightLegs.Queries
         }
 
         public int FlightBookingId { get; }
+
+        public string CacheKey => $"GetFlightLegs:{FlightBookingId}";
     }
 
     public class GetFlightLegsQueryHandler : IRequestHandler<GetFlightLegsQuery, List<CreateFlightLegCommand>>
