@@ -4,7 +4,7 @@ using MediatrDemo.Logic.Commands.Hotels;
 using System;
 using System.Linq;
 
-namespace TestCollection
+namespace TestCollection.Helpers
 {
     public static class TestData
     {
@@ -21,7 +21,7 @@ namespace TestCollection
                     TotalCost = (ValueHelper.RandomInt(2000) + 2000) * 100,
                     Country = "Wales",
                     HotelBookings = Enumerable.Range(0, 2).Select(n => CreateHotelBooking).ToList(),
-                    FlightBookings= Enumerable.Range(0, 2).Select(n => CreateFlightBooking).ToList(),
+                    FlightBookings = Enumerable.Range(0, 2).Select(n => CreateFlightBooking).ToList(),
 
                 };
 

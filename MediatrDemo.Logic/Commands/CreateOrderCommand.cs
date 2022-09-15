@@ -8,16 +8,14 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.Commands
 {
-    public class CreateOrderCommand:IRequest<int>
+    public class CreateOrderCommand : IRequest<int>
     {
         public string Reference { get; set; }
         public int NumberOfAdults { get; set; }
         public int NumberOfChildren { get; set; }
         public int TotalCost { get; set; }
         public string Country { get; set; }
-
         public List<CreateHotelBookingCommand> HotelBookings { get; set; }
-
         public List<CreateFlightBookingCommand> FlightBookings { get; set; }
     }
 
@@ -36,16 +34,16 @@ namespace MediatrDemo.Logic.Commands
         {
             var orderId = await repository.CreateAsync(request);
 
-            foreach(var command in request.HotelBookings)
+            foreach (var createHotelBookingCommand in request.HotelBookings)
             {
-                command.OrderId = orderId;
-                await mediator.Send(command);
+                createHotelBookingCommand.OrderId = orderId;
+                await mediator.Send(createHotelBookingCommand);
             }
 
-            foreach (var command in request.FlightBookings)
+            foreach (var createFlightBookingCommand in request.FlightBookings)
             {
-                command.OrderId = orderId;
-                await mediator.Send(command);
+                createFlightBookingCommand.OrderId = orderId;
+                await mediator.Send(createFlightBookingCommand);
             }
 
             return orderId;

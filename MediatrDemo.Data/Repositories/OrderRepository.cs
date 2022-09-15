@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using MediatrDemo.Domain;
+using MediatrDemo.Domain.Services;
 using MediatrDemo.Logic.Commands;
 using MediatrDemo.Logic.Repositories;
 using System.Linq;
@@ -22,8 +22,6 @@ namespace MediatrDemo.Data.Repositories
 
             return result;
         }
-
-
 
         public async Task<CreateOrderCommand> GetByIdAsync(int id)
         {

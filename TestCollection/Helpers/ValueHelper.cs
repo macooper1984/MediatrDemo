@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace TestCollection
+namespace TestCollection.Helpers
 {
     public static class ValueHelper
     {

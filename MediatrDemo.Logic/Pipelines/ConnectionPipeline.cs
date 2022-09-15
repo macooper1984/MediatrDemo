@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MediatrDemo.Domain;
+using MediatrDemo.Domain.Services;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading;
@@ -10,7 +10,6 @@ namespace MediatrDemo.Logic.Pipelines
     public class ConnectionPipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
-
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             if (ConnectionService.HasConnection == false)

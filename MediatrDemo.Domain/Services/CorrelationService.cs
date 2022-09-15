@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace MediatrDemo.Domain
+namespace MediatrDemo.Domain.Services
 {
     public static class CorrelationService
     {

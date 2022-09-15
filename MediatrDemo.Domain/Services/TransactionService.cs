@@ -1,7 +1,7 @@
 ﻿using System.Data.Common;
 using System.Threading;
 
-namespace MediatrDemo.Domain
+namespace MediatrDemo.Domain.Services
 {
     public static class ConnectionService
     {

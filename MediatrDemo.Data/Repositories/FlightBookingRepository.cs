@@ -1,7 +1,6 @@
 ﻿using Dapper;
-using MediatrDemo.Domain;
+using MediatrDemo.Domain.Services;
 using MediatrDemo.Logic.Commands.Flights;
-using MediatrDemo.Logic.Commands.Hotels;
 using MediatrDemo.Logic.Repositories;
 using System.Collections.Generic;
 using System.Linq;

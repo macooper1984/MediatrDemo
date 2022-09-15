@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MediatrDemo.Domain;
+using MediatrDemo.Domain.Services;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading;
@@ -19,30 +19,6 @@ namespace MediatrDemo.Logic.Pipelines
             }
 
             return await next.Invoke();
-        }
-
-        private static string connectionString;
-
-        public static string ConnectionString
-        {
-            get
-            {
-                if (connectionString == null)
-                {
-                    var builder = new MySqlConnectionStringBuilder
-                    {
-                        Server = "127.0.0.1",
-                        Port = 3311,
-                        UserID = "otb",
-                        Password = "OtbOtb",
-                        Database = "AdminDotNet"
-                    };
-
-                    connectionString = builder.ToString();
-                }
-
-                return connectionString;
-            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MediatR;
-using MediatrDemo.Domain;
+using MediatrDemo.Domain.Services;
+using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace MediatrDemo.Logic.Pipelines
     {
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            var str = $"{CorrelationService.TraceId} - Processing {request.GetType()}";
+            var str = $"{DateTime.UtcNow.ToShortTimeString()} - {CorrelationService.TraceId} - Processing {request.GetType()}";
 
             await File.AppendAllLinesAsync("c:/code/pipelineOutput.txt", new string[] { str });
 

@@ -4,10 +4,11 @@ using NUnit.Framework;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using TestCollection.Helpers;
 
 namespace TestCollection
 {
-    public class MyTests
+    public class EndToEndTesting
     {
         private TestWebApplicationFactory testWebApplicationFactory;
         private HttpClient httpClient;
