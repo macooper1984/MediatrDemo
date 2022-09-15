@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using MediatR;
 using MediatrDemo.Logic.Interfaces.Repositories;
 using System;
 using System.Threading;
@@ -30,6 +32,14 @@ namespace MediatrDemo.Logic.Usecases.FlightLegs.Commands
             var id = await repository.CreateAsync(request);
 
             return id;
+        }
+    }
+
+    public class CreateFlightLegCommandValidator : AbstractValidator<CreateFlightLegCommand>
+    {
+        public CreateFlightLegCommandValidator()
+        {
+            RuleFor(n => n.ToIata).NotEqual("ABC").WithMessage("We don't fly from there");
         }
     }
 }
