@@ -1,13 +1,11 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Commands.Flights;
-using MediatrDemo.Logic.Commands.Hotels;
-using MediatrDemo.Logic.Queries.Hotels;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.Usecases.FlightLegs.Commands;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Queries.Flights
+namespace MediatrDemo.Logic.Usecases.FlightLegs.Queries
 {
     public class GetFlightLegsQuery : IRequest<List<CreateFlightLegCommand>>
     {
@@ -17,8 +15,6 @@ namespace MediatrDemo.Logic.Queries.Flights
         }
 
         public int FlightBookingId { get; }
-
-
     }
 
     public class GetFlightLegsQueryHandler : IRequestHandler<GetFlightLegsQuery, List<CreateFlightLegCommand>>

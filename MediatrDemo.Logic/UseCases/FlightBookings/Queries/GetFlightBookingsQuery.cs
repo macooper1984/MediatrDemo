@@ -1,13 +1,12 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Commands.Flights;
-using MediatrDemo.Logic.Queries.Hotels;
-using MediatrDemo.Logic.Repositories;
-using Org.BouncyCastle.Asn1.X509;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.Usecases.FlightBookings.Commands;
+using MediatrDemo.Logic.Usecases.FlightLegs.Queries;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Queries.Flights
+namespace MediatrDemo.Logic.UseCases.FlightBookings.Queries
 {
     public class GetFlightBookingsQuery : IRequest<List<CreateFlightBookingCommand>>
     {

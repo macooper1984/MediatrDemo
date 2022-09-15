@@ -1,6 +1,7 @@
-﻿using MediatrDemo.Logic.Commands;
-using MediatrDemo.Logic.Commands.Flights;
-using MediatrDemo.Logic.Commands.Hotels;
+﻿using MediatrDemo.Logic.Usecases.FlightBookings.Commands;
+using MediatrDemo.Logic.Usecases.FlightLegs.Commands;
+using MediatrDemo.Logic.Usecases.Orders.Commands;
+using MediatrDemo.Logic.UseCases.Hotels.Commands;
 using System;
 using System.Linq;
 

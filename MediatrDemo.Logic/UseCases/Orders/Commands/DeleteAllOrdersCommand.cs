@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Commands
+namespace MediatrDemo.Logic.Usecases.Orders.Commands
 {
     public class DeleteAllOrdersCommand : IRequest
     {

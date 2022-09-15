@@ -1,13 +1,11 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Commands;
-using MediatrDemo.Logic.Commands.Hotels;
-using MediatrDemo.Logic.Queries.Flights;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.UseCases.Hotels.Commands;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Queries.Hotels
+namespace MediatrDemo.Logic.Usecases.Hotels.Queries
 {
     public class GetHotelBookingsQuery : IRequest<List<CreateHotelBookingCommand>>
     {

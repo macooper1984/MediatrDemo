@@ -1,10 +1,11 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
+using MediatrDemo.Logic.Usecases.FlightLegs.Commands;
+using MediatrDemo.Logic.Interfaces.Repositories;
 
-namespace MediatrDemo.Logic.Commands.Flights
+namespace MediatrDemo.Logic.Usecases.FlightBookings.Commands
 {
     public class CreateFlightBookingCommand : IRequest<int>
     {

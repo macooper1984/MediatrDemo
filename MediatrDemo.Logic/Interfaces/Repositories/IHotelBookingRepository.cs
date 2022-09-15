@@ -1,8 +1,8 @@
-﻿using MediatrDemo.Logic.Commands.Hotels;
+﻿using MediatrDemo.Logic.UseCases.Hotels.Commands;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Repositories
+namespace MediatrDemo.Logic.Interfaces.Repositories
 {
     public interface IHotelBookingRepository
     {

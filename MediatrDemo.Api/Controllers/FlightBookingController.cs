@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Commands.Flights;
+using MediatrDemo.Logic.Usecases.FlightBookings.Commands;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

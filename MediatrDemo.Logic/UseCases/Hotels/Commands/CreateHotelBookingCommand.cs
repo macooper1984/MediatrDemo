@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Commands.Hotels
+namespace MediatrDemo.Logic.UseCases.Hotels.Commands
 {
     public class CreateHotelBookingCommand : IRequest<int>
     {

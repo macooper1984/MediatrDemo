@@ -1,4 +1,4 @@
-﻿using MediatrDemo.Logic.Commands;
+﻿using MediatrDemo.Logic.Usecases.Orders.Commands;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System.Net.Http;

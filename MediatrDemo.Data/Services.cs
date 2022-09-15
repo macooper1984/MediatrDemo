@@ -1,5 +1,5 @@
 ﻿using MediatrDemo.Data.Repositories;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MediatrDemo.Data

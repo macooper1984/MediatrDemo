@@ -1,7 +1,8 @@
 ﻿using Dapper;
 using MediatrDemo.Domain.Services;
-using MediatrDemo.Logic.Commands;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.Usecases.Orders.Commands;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -31,7 +32,7 @@ namespace MediatrDemo.Data.Repositories
                 new
                 {
                     Id = id
-                }, 
+                },
                 ConnectionService.Transaction);
 
             return result.FirstOrDefault();
@@ -42,6 +43,15 @@ namespace MediatrDemo.Data.Repositories
             const string sql = @"DELETE FROM Orders;";
 
             await ConnectionService.Connection.ExecuteAsync(sql);
+        }
+
+        public async Task<List<string>> GetAllAsync()
+        {
+            const string sql = @"SELECT Reference FROM Orders";
+
+            var result = await ConnectionService.Connection.QueryAsync<string>(sql, transaction: ConnectionService.Transaction);
+
+            return result.ToList();
         }
     }
 }

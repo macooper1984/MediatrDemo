@@ -1,12 +1,12 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Commands.Flights;
-using MediatrDemo.Logic.Commands.Hotels;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.Usecases.FlightBookings.Commands;
+using MediatrDemo.Logic.UseCases.Hotels.Commands;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Commands
+namespace MediatrDemo.Logic.Usecases.Orders.Commands
 {
     public class CreateOrderCommand : IRequest<int>
     {

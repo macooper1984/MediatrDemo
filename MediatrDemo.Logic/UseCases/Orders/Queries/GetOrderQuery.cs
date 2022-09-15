@@ -1,13 +1,13 @@
 ﻿using MediatR;
 using MediatrDemo.Domain.Exceptions;
-using MediatrDemo.Logic.Commands;
-using MediatrDemo.Logic.Queries.Flights;
-using MediatrDemo.Logic.Queries.Hotels;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.Usecases.Hotels.Queries;
+using MediatrDemo.Logic.Usecases.Orders.Commands;
+using MediatrDemo.Logic.UseCases.FlightBookings.Queries;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Queries
+namespace MediatrDemo.Logic.Usecases.Orders.Queries
 {
     public record GetOrderQuery : IRequest<CreateOrderCommand>
     {

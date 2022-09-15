@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using MediatrDemo.Logic.Commands.Flights;
-using MediatrDemo.Logic.Repositories;
+using MediatrDemo.Logic.Interfaces.Repositories;
+using MediatrDemo.Logic.Usecases.FlightBookings.Commands;
 using NSubstitute;
 using NUnit.Framework;
 using System.Linq;
