@@ -3,6 +3,7 @@ using MediatR;
 using MediatrDemo.Logic.Pipelines;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 
 namespace MediatrDemo.Logic
 {
@@ -17,7 +18,7 @@ namespace MediatrDemo.Logic
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ConnectionPipeline<,>));
 
-            serviceCollection.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            serviceCollection.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies().Where(p => !p.IsDynamic));
         }
     }
 }

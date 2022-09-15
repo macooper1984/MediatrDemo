@@ -14,6 +14,7 @@ namespace MediatrDemo.Logic.Pipelines
 
             if (DodgyCache.HasKey(cacheKey))
             {
+                await DodgyLogger.LogAsync($"Returning result from Cache - {request.GetType()}");
                 return await Task.FromResult(DodgyCache.GetByKey<TResponse>(cacheKey));
             }
             else

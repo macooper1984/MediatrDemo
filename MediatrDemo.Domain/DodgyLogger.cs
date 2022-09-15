@@ -9,7 +9,7 @@ namespace MediatrDemo.Domain
     {
         public static async Task LogAsync(string message)
         {
-            var str = $"{DateTime.UtcNow.ToShortTimeString()} - {CorrelationService.TraceId} - {message}";
+            var str = $"{DateTime.Now.ToShortTimeString()} - {CorrelationService.TraceId} - {message}";
 
             await File.AppendAllLinesAsync("c:/code/pipelineOutput.txt", new string[] { str });
         }
