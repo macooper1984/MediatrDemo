@@ -1,3 +1,4 @@
+using MediatrDemo.Api.Middleware;
 using MediatrDemo.Data;
 using MediatrDemo.Logic;
 using Microsoft.AspNetCore.Builder;
@@ -18,7 +19,11 @@ namespace MediatrDemo.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
             var app = builder.Build();
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

@@ -1,7 +1,5 @@
 ﻿using MediatR;
-using MediatrDemo.Domain.Services;
-using System;
-using System.IO;
+using MediatrDemo.Domain;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,9 +10,7 @@ namespace MediatrDemo.Logic.Pipelines
     {
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            var str = $"{DateTime.UtcNow.ToShortTimeString()} - {CorrelationService.TraceId} - Processing {request.GetType()}";
-
-            await File.AppendAllLinesAsync("c:/code/pipelineOutput.txt", new string[] { str });
+            await DodgyLogger.LogAsync($"Processing {request.GetType()}");
 
             return await next.Invoke();
         }

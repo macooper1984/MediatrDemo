@@ -10,7 +10,17 @@ namespace MediatrDemo.Domain.Services
 
         public static Guid TraceId
         {
-            get => traceId.Value.Value;
+            get
+            {
+                if (HasTraceId)
+                {
+                    return traceId.Value.Value;
+                }
+                else
+                {
+                    return Guid.Empty;
+                }
+            } 
             set => traceId.Value = value;
         }
         public static bool HasTraceId => traceId.Value != null;
