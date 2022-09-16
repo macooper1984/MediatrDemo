@@ -2,7 +2,7 @@
 using MediatR;
 using MediatrDemo.Consumers.Messages;
 using MediatrDemo.Logic.Usecases.Orders.Commands;
-using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace MediatrDemo.Consumers
 {

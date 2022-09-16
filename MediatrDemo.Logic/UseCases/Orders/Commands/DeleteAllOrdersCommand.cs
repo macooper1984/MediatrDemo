@@ -22,7 +22,7 @@ namespace MediatrDemo.Logic.Usecases.Orders.Commands
         {
             await repository.DeleteAllAsync();
 
-            DodgyEventPublisher.PublishEvent(new AllOrdersDeletedEvent())
+            DodgyEventPublisher.PublishEvent(new AllOrdersDeletedEvent());
 
             return new Unit();
         }
