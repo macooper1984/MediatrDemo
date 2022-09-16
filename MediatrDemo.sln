@@ -10,13 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{59C94F
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrDemo.Data", "MediatrDemo.Data\MediatrDemo.Data.csproj", "{F33DEB0F-1A7A-4F64-B4C4-3E3C59F63E13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatrDemo.Data", "MediatrDemo.Data\MediatrDemo.Data.csproj", "{F33DEB0F-1A7A-4F64-B4C4-3E3C59F63E13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrDemo.Logic", "MediatrDemo.Logic\MediatrDemo.Logic.csproj", "{14517EE6-B401-4828-9681-132AE3EDFD57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatrDemo.Logic", "MediatrDemo.Logic\MediatrDemo.Logic.csproj", "{14517EE6-B401-4828-9681-132AE3EDFD57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrDemo.Domain", "MediatrDemo.Domain\MediatrDemo.Domain.csproj", "{FED07A6F-BCC6-4488-9DA5-77FEE638D2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatrDemo.Domain", "MediatrDemo.Domain\MediatrDemo.Domain.csproj", "{FED07A6F-BCC6-4488-9DA5-77FEE638D2D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCollection", "TestCollection\TestCollection.csproj", "{BF77D413-5E5F-458A-BE91-E27369C31347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCollection", "TestCollection\TestCollection.csproj", "{BF77D413-5E5F-458A-BE91-E27369C31347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrDemo.Consumers", "MediatrDemo.Consumers\MediatrDemo.Consumers.csproj", "{CEDABA4F-84AB-4A51-B84E-322C3F6B1A90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{BF77D413-5E5F-458A-BE91-E27369C31347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF77D413-5E5F-458A-BE91-E27369C31347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF77D413-5E5F-458A-BE91-E27369C31347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEDABA4F-84AB-4A51-B84E-322C3F6B1A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDABA4F-84AB-4A51-B84E-322C3F6B1A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDABA4F-84AB-4A51-B84E-322C3F6B1A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDABA4F-84AB-4A51-B84E-322C3F6B1A90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

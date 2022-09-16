@@ -15,12 +15,12 @@ namespace MediatrDemo.Logic
         public static void RegisterLogicServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformancePipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(CorrelationPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ConnectionPipeline<,>));
-            serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformancePipeline<,>));
 
             serviceCollection.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies().Where(p => !p.IsDynamic));
         }

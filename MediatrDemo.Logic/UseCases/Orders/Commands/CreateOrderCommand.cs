@@ -46,6 +46,8 @@ namespace MediatrDemo.Logic.Usecases.Orders.Commands
                 await mediator.Send(createFlightBookingCommand);
             }
 
+            DodgyEventPublisher.PublishEvent(new FlightBookingCreatedEvent(orderId));
+
             return orderId;
         }
     }

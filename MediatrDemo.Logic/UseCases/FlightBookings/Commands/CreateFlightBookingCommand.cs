@@ -38,6 +38,8 @@ namespace MediatrDemo.Logic.Usecases.FlightBookings.Commands
                 await mediator.Send(command);
             }
 
+            DodgyEventPublisher.PublishEvent(new FlightBookingCreatedEvent(id));
+
             return id;
         }
     }

@@ -21,6 +21,9 @@ namespace MediatrDemo.Logic.Usecases.Orders.Commands
         public async Task<Unit> Handle(DeleteAllOrdersCommand request, CancellationToken cancellationToken)
         {
             await repository.DeleteAllAsync();
+
+            DodgyEventPublisher.PublishEvent(new AllOrdersDeletedEvent())
+
             return new Unit();
         }
     }
