@@ -1,16 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="11.2.2" />
-		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 		<PackageReference Include="MediatR" Version="10.0.*" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.*" />
+
+		<PackageReference Include="FluentValidation" Version="11.2.2" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2" />
+
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
 		<PackageReference Include="MySql.Data" Version="8.0.30" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\MediatrDemo.Domain\MediatrDemo.Domain.csproj" />
+		<ProjectReference Include="..\MediatrDemo.Domain\MediatrDemo.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "14ba8522-526e-4655-b6e3-dc14d96b97c9",
+		"name": "Mediatr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21703392"
+	},
+	"item": [
+		{
+			"name": "GetOrdersById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ServerUrl}}/api/orders/{{OrderId}}",
+					"host": [
+						"{{ServerUrl}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						"{{OrderId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function randomIntFromInterval(min, max) { // min and max included \r",
+							"  return Math.floor(Math.random() * (max - min + 1) + min)\r",
+							"}\r",
+							"\r",
+							"pm.environment.set(\"BookingReference\", \"MYB\" + randomIntFromInterval(10000, 999999));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(pm.response.json());\r",
+							"pm.environment.set(\"OrderId\", jsonData);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reference\": \"{{BookingReference}}\",\r\n    \"numberOfAdults\": 2,\r\n    \"numberOfChildren\": 1,\r\n    \"totalCost\": 500000,\r\n    \"country\": \"New Zealand\",\r\n    \"hotelBookings\": [\r\n        {\r\n            \"hotelName\": \"Taupo Thermal Lodge\",\r\n            \"roomType\": \"Family\",\r\n            \"numberOfBeds\": 2,\r\n            \"totalCost\": 36000\r\n        },\r\n        {\r\n            \"hotelName\": \"The Prancing Pony\",\r\n            \"roomType\": \"Family\",\r\n            \"numberOfBeds\": 3,\r\n            \"totalCost\": 29800\r\n        }\r\n    ],\r\n    \"flightBookings\": [\r\n        {\r\n            \"reference\": \"VA12345\",\r\n            \"airlineName\": \"Virgin Atlantic\",\r\n            \"totalCost\": 24000,\r\n            \"flightLegs\": [\r\n                {\r\n                    \"reference\": \"VS23\",\r\n                    \"fromIata\": \"LHR\",\r\n                    \"toIata\": \"LAX\",\r\n                    \"departureTime\": \"2022-09-18T16:30:00\",\r\n                    \"arrivalTime\": \"2022-09-18T19:45:00\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"reference\": \"ANZ\",\r\n            \"airlineName\": \"Air New Zealand\",\r\n            \"totalCost\": 30600,\r\n            \"flightLegs\": [\r\n                {\r\n                    \"reference\": \"NZ5\",\r\n                    \"fromIata\": \"LAX\",\r\n                    \"toIata\": \"AKL\",\r\n                    \"departureTime\": \"2022-09-19T21:50:00\",\r\n                    \"arrivalTime\": \"2022-09-21T05:45:00\"\r\n                },\r\n                {\r\n                    \"reference\": \"NZ6\",\r\n                    \"fromIata\": \"AKL\",\r\n                    \"toIata\": \"LAX\",\r\n                    \"departureTime\": \"2022-09-30T20:15:00\",\r\n                    \"arrivalTime\": \"2022-09-30T12:20:00\"\r\n                }\r\n            ]\r\n        },\r\n                {\r\n            \"reference\": \"UTD12345\",\r\n            \"airlineName\": \"United\",\r\n            \"totalCost\": 24000,\r\n            \"flightLegs\": [\r\n                {\r\n                    \"reference\": \"UA923\",\r\n                    \"fromIata\": \"LAX\",\r\n                    \"toIata\": \"LHR\",\r\n                    \"departureTime\": \"2022-09-30T17:15:00\",\r\n                    \"arrivalTime\": \"2022-10-01T11:45:00\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "{{ServerUrl}}/api/orders/",
+					"host": [
+						"{{ServerUrl}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAll",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ServerUrl}}/api/orders/DeleteAll",
+					"host": [
+						"{{ServerUrl}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						"DeleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ServerUrl}}/api/orders",
+					"host": [
+						"{{ServerUrl}}"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

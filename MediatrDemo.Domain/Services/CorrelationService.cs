@@ -7,7 +7,6 @@ namespace MediatrDemo.Domain.Services
     {
         private static AsyncLocal<Guid?> traceId = new AsyncLocal<Guid?>();
 
-
         public static Guid TraceId
         {
             get

@@ -15,6 +15,7 @@ namespace MediatrDemo.Logic
         public static void RegisterLogicServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformancePipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(CorrelationPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingPipeline<,>));
