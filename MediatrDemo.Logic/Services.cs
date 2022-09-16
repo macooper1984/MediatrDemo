@@ -1,6 +1,9 @@
 ﻿using FluentValidation;
 using MediatR;
 using MediatrDemo.Logic.Pipelines;
+using MediatrDemo.Logic.Pipelines.Advanced;
+using MediatrDemo.Logic.Pipelines.Basic;
+using MediatrDemo.Logic.Pipelines.Intermediate;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
@@ -17,6 +20,7 @@ namespace MediatrDemo.Logic
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipeline<,>));
             serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ConnectionPipeline<,>));
+            serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformancePipeline<,>));
 
             serviceCollection.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies().Where(p => !p.IsDynamic));
         }

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Pipelines
+namespace MediatrDemo.Logic.Pipelines.Intermediate
 {
     public class ValidationPipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : IRequest<TResponse>
+        where TRequest : ICommand<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> validators;
 
@@ -33,7 +33,7 @@ namespace MediatrDemo.Logic.Pipelines
                     }
                 }
             }
-            return await next();
+            return await next.Invoke();
         }
     }
 }

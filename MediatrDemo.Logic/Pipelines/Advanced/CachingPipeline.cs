@@ -3,7 +3,7 @@ using MediatrDemo.Domain;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Pipelines
+namespace MediatrDemo.Logic.Pipelines.Advanced
 {
     public class CachingPipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IQuery<TResponse>
@@ -14,7 +14,7 @@ namespace MediatrDemo.Logic.Pipelines
 
             if (DodgyCache.HasKey(cacheKey))
             {
-                await DodgyLogger.LogAsync($"Returning result from Cache - {request.GetType()}");
+                await DodgyLogger.LogAsync($"Returning result from Cache - {request.GetType().Name}");
                 return await Task.FromResult(DodgyCache.GetByKey<TResponse>(cacheKey));
             }
             else

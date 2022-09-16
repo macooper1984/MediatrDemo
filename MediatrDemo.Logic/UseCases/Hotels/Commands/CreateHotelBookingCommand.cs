@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.UseCases.Hotels.Commands
 {
-    public class CreateHotelBookingCommand : IRequest<int>
+    public class CreateHotelBookingCommand : ICommand<int>
     {
         public int OrderId { get; set; }
 

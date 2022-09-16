@@ -7,7 +7,7 @@ using MediatrDemo.Logic.Interfaces.Repositories;
 
 namespace MediatrDemo.Logic.Usecases.FlightBookings.Commands
 {
-    public class CreateFlightBookingCommand : IRequest<int>
+    public class CreateFlightBookingCommand : ICommand<int>
     {
         public int Id { get; set; }
         public int OrderId { get; set; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.Usecases.Orders.Commands
 {
-    public class CreateOrderCommand : IRequest<int>
+    public class CreateOrderCommand : ICommand<int>
     {
         public string Reference { get; set; }
         public int NumberOfAdults { get; set; }

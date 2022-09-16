@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatrDemo.Logic.Pipelines
+namespace MediatrDemo.Logic.Pipelines.Advanced
 {
     public class ConnectionPipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

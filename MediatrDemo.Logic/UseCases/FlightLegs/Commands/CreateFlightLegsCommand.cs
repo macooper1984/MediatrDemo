@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediatrDemo.Logic.Usecases.FlightLegs.Commands
 {
-    public class CreateFlightLegCommand : IRequest<int>
+    public class CreateFlightLegCommand : ICommand<int>
     {
         public int FlightBookingId { get; set; }
         public string Reference { get; set; }
