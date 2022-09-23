@@ -1,0 +1,32 @@
+CQRS Pattern
+•	More importantly, the way we’ve chosen to implement it using Mediatr.
+•	What is CQRS
+•	MEdiatr: an intelligent dispatcher and message mediator written in C#.
+•	Quite a few people have asked why we need Mediatr when we’re already using MassTransit. 
+o	Answer is, these messages are never leaving the application, and everything’s done in process.
+
+•	Application to demonstrate CQRS implementation using Mediatr
+•	A few disclaimers:
+o	Not claiming this is the only way to implement CQRS or that it’s perfect
+	Code written in my own time 
+	(Mostly less than 3 hours). 
+	Learning as I go
+o	Initially based on Clean Architecture. But taken a few liberties to save time
+o	Dodgy classes – Name is pretty honest, just don’t look under the hood.
+o	This is just a proof of concept
+	A lot showing what I can achieve, done for the fun of it.
+	Some aspects are quite advanced. Do not try this at home.
+o	These are things I’ve taken from my time at Sage where architects did a lot of these things for us.
+
+•	Data structure (Postman)
+•	API (Swagger)
+•	Adding Mediator to the solution
+•	Command – Create Order
+•	Queries – Get Order
+•	Reusable blocks – Create Flight Booking
+•	Pipelines
+o	Transaction
+	Rollback
+	Atomic actions (Event publishing)
+•	Consumer
+•	Unit testing
